@@ -25,6 +25,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
     align-items: left;
+    gap: 0.5rem;
     padding-block: 1rem;
     padding-inline: 0.5rem;
     background-color: var(--text-color);

@@ -38,7 +38,7 @@ export default async function Home() {
           <h4>Fecha Nacimiento</h4>
           <h4>Correo</h4>
           <h4>Contraseña</h4>
-          <h4>Opciones</h4>
+          <h4></h4>
         </div>
         {tableData}
       </div>
