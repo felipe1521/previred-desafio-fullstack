@@ -1,0 +1,46 @@
+.button {
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--text-color);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.03);
+}
+
+.icon {
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.btn_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-block: 1rem;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: 0.3s;
+}
+
+.btn_confirm, .btn_cancel:active {
+    background-color: var(--text-color-pri);
+    color: var(--text-color);
+}
+.btn_cancel, .btn_confirm:active {
+    background-color: #575757;
+    color: var(--text-color);
+}

@@ -1,0 +1,50 @@
+.overlay {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 2rem 4rem;
+    gap: 1rem;
+    background-color: var(--bg-color);
+}
+
+.icon_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.icon_close:active {
+    color: #000;
+}
+
+.data_desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-block: 2rem;
+    gap: 10px;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--text-color);
+}
