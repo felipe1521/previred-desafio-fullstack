@@ -37,7 +37,7 @@ cd ../front-end
 
 📦 Instalar dependencias:
 
-npm install
+pnpm install
 
 ▶️ Ejecutar el frontend:
 
