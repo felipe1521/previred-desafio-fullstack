@@ -9,13 +9,17 @@ function InputText({ value, setValue, error, name }) {
     setStylePlaceholder(style);
   }, [value]);
 
-  const handleInput = (newValue) => setValue({ ...value, [name]: newValue });
+  const handleInput = (newValue) => {
+    if(newValue.length <= 20) setValue({ ...value, [name]: newValue });
+  };
 
   return (
     <div className={`${styles.container} ${(error && !value[name]) ? styles.input_error: ''}`}>
       <input type='text' name={name} className={styles.text_input} onChange={(e) => handleInput(e.target.value)}
-      value={value[name]} max={50}/>
-      <p className={`${styles.placeholder} ${stylePlaceholder}`}>{name}</p>
+      value={value[name]} />
+      <p className={`${styles.placeholder} ${stylePlaceholder}`}>
+        {name} {(value[name].length >= 19) ? '(Maximo 20 caracteres)' : ''}
+      </p>
       {(error && !value[name]) ? <p className={styles.text_error}>Debes ingresar un dato</p> : <></>}
     </div>
   )

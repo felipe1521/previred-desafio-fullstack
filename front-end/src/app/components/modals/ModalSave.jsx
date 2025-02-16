@@ -17,6 +17,10 @@ function ModalSave({ data = {
   const [formData, setFormData] = React.useState(data);
   const [formError, setFormError] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const [validEmail, setValidEmail] = React.useState(true);
+  const [validClave, setValidClave] = React.useState(true);
+  const [validRut, setValidRut] = React.useState(true);
+  const [validFecha, setValidFecha] = React.useState(true);
 
   const router = useRouter();
 
@@ -33,12 +37,10 @@ function ModalSave({ data = {
   const handleSubmit = async () => {
     try {
       const validation = validateData();
-      if(!validation) {
-        setFormError(true);
-        return;
-      }
-      setLoading(true);
+      if(!validation) setFormError(true);     
+      if(!validation || !validEmail || !validClave || !validRut || !validFecha) return;
 
+      setLoading(true);
       const api = (!data.nombres) ? { type: 'save', method: 'POST' } : { type: 'edit', method: 'PUT' };
       const resp = await fetch(`http://localhost:8080/api/usuarios/${api.type}`, { 
         method: api.method,
@@ -65,10 +67,10 @@ function ModalSave({ data = {
         <div className={styles.modal}>
           <InputText value={formData} setValue={setFormData} error={formError} name={'nombres'} />
           <InputText value={formData} setValue={setFormData} error={formError} name={'apellidos'} />
-          <InputRut value={formData} setValue={setFormData} error={formError} name={'rut'} />
-          <InputDate value={formData} setValue={setFormData} error={formError} name={'fechaNacimiento'} />
-          <InputEmail value={formData} setValue={setFormData} error={formError} name={'correoElectronico'} />
-          <InputPassword value={formData} setValue={setFormData} error={formError} name={'contrasena'} />
+          <InputRut value={formData} setValue={setFormData} error={formError} valid={validRut} setValid={setValidRut} name={'rut'} />
+          <InputDate value={formData} setValue={setFormData} error={formError} valid={validFecha} setValid={setValidFecha} name={'fechaNacimiento'} />
+          <InputEmail value={formData} setValue={setFormData} error={formError} valid={validEmail} setValid={setValidEmail} name={'correoElectronico'} />
+          <InputPassword value={formData} setValue={setFormData} error={formError} valid={validClave} setValid={setValidClave} name={'contrasena'} />
           <button className={stylesBtn.button} style={{ width: '50%'}} onClick={handleSubmit}>Guardar</button>
           <XMarkIcon className={styles.icon_close} onClick={handleClose} />
         </div>

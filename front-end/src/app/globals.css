@@ -54,10 +54,10 @@ a {
 .spinner {
   width: 13rem;
   height: 13rem;
-  border: 1.5rem solid rgb(0, 0, 0);
-  border-top-color: var(--text-color);
-  border-left-color: var(--text-color);
-  border-right-color: var(--text-color);
+  border: 1.5rem solid var(--text-color);
+  border-top-color: var(--text-color-pri);
+  border-left-color: var(--text-color-pri);
+  border-right-color: var(--text-color-pri);
   border-radius: 50%;
   animation: spin 2s linear infinite;
 }

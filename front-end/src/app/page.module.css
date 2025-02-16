@@ -12,12 +12,10 @@
 .table_title {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-    justify-content: space-between;
-    text-align: start;
-    padding: 1rem;
+    text-align: left;
+    padding-block: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
-    border-radius: 10px;
     border: 2px solid var(--text-color);
     color: var(--text-color);
 }
@@ -26,15 +24,12 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
+    align-items: left;
+    padding-block: 1rem;
+    padding-inline: 0.5rem;
     background-color: var(--text-color);
-    color: #fff;
-}
-
-.table_data h4 {
-    padding: 1rem;
+    border-bottom: 2px solid var(--text-color-pri);
+    color: var(--text-color-pri);
 }
 
 .section_info {
